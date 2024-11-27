@@ -116,3 +116,27 @@ exports.deleteAlbum = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 }
+
+exports.addMusicaToAlbum = async (req, res) => {
+    const { id } = req.params; // ID do álbum
+    const { nome } = req.body; // Nome da música a ser adicionada
+
+    try {
+        // Verifica se o álbum existe
+        const album = await Album.findByPk(id);
+        if (!album) {
+            return res.status(404).send('Álbum não encontrado');
+        }
+
+        // Cria a nova música associada ao álbum
+        const novaMusica = await Musica.create({
+            nome,
+            albumId: id // Associa a música ao álbum
+        });
+
+        // Redireciona de volta para os detalhes do álbum, agora com a música adicionada
+        res.redirect(`/albuns/${id}`);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+};

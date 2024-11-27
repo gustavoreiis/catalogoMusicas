@@ -23,6 +23,17 @@
             <% }); %>
         </ul>
 
+        <!-- Formulário para adicionar nova música -->
+        <h3>Adicionar Nova Música</h3>
+        <form action="/albuns/<%= album.id %>/musicas" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome da Música:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Adicionar Música</button>
+        </form>
+
         <a href="/albuns" class="back-link">Voltar à lista de álbuns</a>
     </div>
 </body>
