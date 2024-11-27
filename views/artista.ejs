@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Artistas</title>
+    <link rel="stylesheet" href="/styles/listaArtistas.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Artistas</h1>
+
+        <!-- Lista de artistas como links -->
+        <ul class="artist-list">
+            <% artistas.forEach(function(artista) { %>
+                <li>
+                    <a href="/artistas/<%= artista.id %>"><%= artista.nome %></a>
+                </li>
+            <% }); %>
+        </ul>
+
+        <h2>Cadastrar Novo Artista</h2>
+        <!-- Formulário para cadastrar um novo artista -->
+        <form action="/artistas" method="POST">
+            <div class="form-group">
+                <label for="nome">Nome do Artista:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="generos">Selecione os Gêneros:</label>
+                <select id="generos" name="generos[]" multiple required>
+                    <% generos.forEach(function(genero) { %>
+                        <option value="<%= genero.id %>"><%= genero.genero %></option>
+                    <% }); %>
+                </select>
+            </div>
+            <button type="submit">Cadastrar</button>
+        </form>
+
+        <a href="/" class="back-link">Voltar para o início</a>
+    </div>
+</body>
+</html>

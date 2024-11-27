@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Artista</title>
+    <link rel="stylesheet" href="/styles/artistaInformacoes.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Artista</h1>
+
+        <!-- Exibindo o nome do artista -->
+        <p><strong>Nome:</strong> <%= artista.nome %></p>
+
+        <!-- Exibindo os gêneros do artista -->
+        <p><strong>Gêneros:</strong> <%= artista.generos.map(g => g.genero).join(', ') %></p>
+
+        <!-- Exibindo os álbuns do artista -->
+        <h2>Álbuns do Artista:</h2>
+        <ul class="album-list">
+            <% artista.albuns.forEach(function(album) { %>
+                <li>
+                    <strong>
+                        <a href="/albuns/<%= album.id %>"><%= album.titulo %></a>
+                    </strong> - <%= album.ano %>
+                    <br>
+                    <img src="<%= album.capa %>" alt="Capa do Álbum" class="album-cover">
+                </li>
+            <% }); %>
+        </ul>
+
+        <a href="/artistas" class="back-link">Voltar para a lista de artistas</a>
+    </div>
+</body>
+</html>

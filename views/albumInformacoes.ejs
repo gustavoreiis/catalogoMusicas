@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Álbum</title>
+    <link rel="stylesheet" href="/styles/albumInformacoes.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Detalhes do Álbum: <%= album.titulo %></h1>
+
+        <p><strong>Título:</strong> <%= album.titulo %></p>
+        <p><strong>Data de Lançamento:</strong> <%= album.ano %></p>
+        <p><strong>Artista:</strong> <%= album.artista.nome %></p>
+
+        <img src="<%= album.capa %>" alt="Capa do Álbum" class="album-cover">
+
+        <h2>Lista de Músicas:</h2>
+        <ul class="musica-list">
+            <% album.musicas.forEach(function(musica) { %>
+                <li><strong><%= musica.nome %></strong></li>
+            <% }); %>
+        </ul>
+
+        <a href="/albuns" class="back-link">Voltar à lista de álbuns</a>
+    </div>
+</body>
+</html>

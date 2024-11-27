@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbuns</title>
+    <link rel="stylesheet" href="/styles/listaAlbuns.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Catálogo de Álbuns</h1>
+
+        <ul class="album-list">
+            <% albuns.forEach(function(album) { %>
+                <li class="album-item">
+                    <a href="/albuns/<%= album.id %>" class="album-link">
+                        <img src="<%= album.capa %>" alt="Capa de <%= album.titulo %>" class="album-cover">
+                        <p><%= album.titulo %></p>
+                    </a>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>

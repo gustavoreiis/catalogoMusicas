@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbuns</title>
+</head>
+<body>
+    <h1>Catálogo de Músicas</h1>
+
+    <ul>
+        <% musicas.forEach(function(musica) { %>
+            <li>
+                <img src="<%= musica.album.capa %>" alt="Capa">
+                Música: <%= musica.nome %>
+                Álbum: <%= musica.album.titulo %>
+                Artista: <%= musica.album.artista.nome %>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

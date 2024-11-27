@@ -1,0 +1,107 @@
+/* Reset básico */
+body, h1, h2, ul, li, a, label, button, input, select {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0d2c1f; /* Verde escuro */
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #111111; /* Preto */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #5ae56e; /* Verde claro */
+    margin-bottom: 20px;
+}
+
+ul.artist-list {
+    list-style: none;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+ul.artist-list li {
+    margin: 10px 0;
+}
+
+ul.artist-list a {
+    text-decoration: none;
+    color: #5ae56e; /* Verde claro */
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+ul.artist-list a:hover {
+    color: #4caf50; /* Verde médio */
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #5ae56e;
+    background: #222222; /* Fundo escuro */
+    color: #ffffff;
+    outline: none;
+}
+
+button {
+    background-color: #5ae56e; /* Verde claro */
+    color: #111111; /* Preto */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #4caf50; /* Verde médio */
+    transform: scale(1.05);
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #5ae56e;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.back-link:hover {
+    background-color: #4caf50; /* Verde médio */
+}
