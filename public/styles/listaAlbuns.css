@@ -69,3 +69,20 @@ ul.album-list li.album-item {
     font-size: 1em;
     font-weight: bold;
 }
+
+.create-album-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Verde escuro */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.create-album-btn:hover {
+    background-color: #45a049; /* Cor mais escura ao passar o mouse */
+}
+

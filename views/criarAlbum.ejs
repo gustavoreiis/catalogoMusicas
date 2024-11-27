@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Álbum</title>
+    <link rel="stylesheet" href="/styles/criarAlbum.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Criar Novo Álbum</h1>
+
+        <!-- Formulário de criação de álbum -->
+        <form action="/albuns" method="POST">
+            <div class="form-group">
+                <label for="titulo">Título do Álbum:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ano">Ano de Lançamento:</label>
+                <input type="number" id="ano" name="ano" required>
+            </div>
+
+            <div class="form-group">
+                <label for="artistaId">Artista:</label>
+                <select id="artistaId" name="artistaId" required>
+                    <!-- Aqui você pode preencher com os artistas disponíveis no banco de dados -->
+                    <% artistas.forEach(function(artista) { %>
+                        <option value="<%= artista.id %>"><%= artista.nome %></option>
+                    <% }); %>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="capa">Capa do Álbum (URL da Imagem):</label>
+                <input type="url" id="capa" name="capa" placeholder="Insira a URL da capa" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Criar Álbum</button>
+        </form>
+
+        <!-- Link para voltar à lista de álbuns -->
+        <a href="/albuns">Voltar à lista de álbuns</a>
+    </div>
+</body>
+</html>
